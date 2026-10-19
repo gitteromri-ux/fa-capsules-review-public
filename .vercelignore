@@ -1,0 +1,6 @@
+.git
+.git/**
+_mirror.log
+.env
+.env.*
+node_modules

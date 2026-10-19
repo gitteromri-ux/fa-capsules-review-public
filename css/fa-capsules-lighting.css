@@ -1,0 +1,180 @@
+/* Balanced lighting and larger type. Preserve copy, offers and script hooks. */
+
+/* Lift the footage and poster fallback without flattening natural highlights. */
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .bg video,
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage video,
+html:root:root:root:root:root:root body#fa.cap-page .kps-method .bg video,
+html:root:root:root:root:root:root body#fa.cap-page .kps-final > video {
+  filter: brightness(1.02) contrast(1.02) saturate(1.03) !important;
+}
+
+/* Remove duplicate blanket overlays. Keep a single directional text scrim. */
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .bg::after,
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage::after,
+html:root:root:root:root:root:root body#fa.cap-page .kps-final::after {
+  background: none !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero::before {
+  background: linear-gradient(105deg,
+    rgba(9, 12, 22, .76) 0%,
+    rgba(9, 12, 22, .64) 48%,
+    rgba(9, 12, 22, .28) 78%,
+    rgba(9, 12, 22, .14) 100%) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage::before {
+  background: linear-gradient(105deg,
+    rgba(9, 12, 22, .74) 0%,
+    rgba(9, 12, 22, .62) 46%,
+    rgba(9, 12, 22, .22) 78%,
+    rgba(9, 12, 22, .16) 100%) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-method::before {
+  background: linear-gradient(100deg,
+    rgba(9, 12, 22, .78) 0%,
+    rgba(9, 12, 22, .64) 48%,
+    rgba(9, 12, 22, .22) 100%) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-final::before {
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(9, 12, 22, .66) 0%,
+    rgba(9, 12, 22, .52) 58%,
+    rgba(9, 12, 22, .24) 100%) !important;
+}
+
+/* Local contrast follows the type rather than blacking out the entire scene. */
+html:root:root:root:root:root:root body#fa.cap-page
+  :is(.kps-hero, .kps-stage, .kps-method, .kps-final)
+  :is(h1, h2, h3, p, .kpx-eyebrow, .eyebrow, .kps-kicker, .tp) {
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .72),
+               0 5px 22px rgba(0, 0, 0, .38) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page
+  :is(.kps-hero, .kps-stage, .kps-method, .kps-final) .gi {
+  background: none !important;
+  color: #f2d79e !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .85),
+               0 4px 18px rgba(0, 0, 0, .5) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage .gi {
+  color: color-mix(in srgb, var(--th, #f2d79e) 65%, white) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero h1 {
+  font-size: clamp(76px, 7.3vw, 120px) !important;
+  line-height: 1.04 !important;
+  max-width: 1040px !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .sub {
+  font-size: clamp(26px, 2.1vw, 34px) !important;
+  line-height: 1.48 !important;
+  max-width: 1000px !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage h3 {
+  font-size: clamp(58px, 5.2vw, 82px) !important;
+  line-height: 1.06 !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage p,
+html:root:root:root:root:root:root body#fa.cap-page .kps-method .kps-sub,
+html:root:root:root:root:root:root body#fa.cap-page .kps-final p {
+  font-size: clamp(24px, 1.75vw, 28px) !important;
+  line-height: 1.5 !important;
+  color: #fff !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-method h2 {
+  font-size: clamp(58px, 5.5vw, 88px) !important;
+  line-height: 1.06 !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-method .kps-step p {
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-method .kps-step h4 {
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-final h2 {
+  font-size: clamp(66px, 6.8vw, 110px) !important;
+  line-height: 1.06 !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-stage .eyebrow {
+  color: #fff0cb !important;
+  font-size: 19px !important;
+  white-space: normal !important;
+  max-width: 100% !important;
+  line-height: 1.4 !important;
+}
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .kps-stats span {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .sub b {
+  color: #fff0cb !important;
+  text-shadow: 0 1px 2px #000, 0 2px 8px rgba(0, 0, 0, .85) !important;
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .kps-stats {
+  background: rgba(9, 12, 22, .62) !important;
+  box-shadow: 0 0 22px 10px rgba(9, 12, 22, .26) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+html:root:root:root:root:root:root body#fa.cap-page .kps-hero .kps-stats
+  :is(b, span, small) {
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .9) !important;
+}
+
+@media (max-width: 760px) {
+  html:root:root:root:root:root:root body#fa.cap-page .kps-hero::before {
+    background: linear-gradient(180deg,
+      rgba(9, 12, 22, .34) 0%,
+      rgba(9, 12, 22, .64) 28%,
+      rgba(9, 12, 22, .68) 74%,
+      rgba(9, 12, 22, .60) 100%) !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-stage::before {
+    background: linear-gradient(180deg,
+      rgba(9, 12, 22, .54) 0%,
+      rgba(9, 12, 22, .66) 24%,
+      rgba(9, 12, 22, .64) 58%,
+      rgba(9, 12, 22, .42) 100%) !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-method::before {
+    background: linear-gradient(110deg,
+      rgba(9, 12, 22, .72) 0%,
+      rgba(9, 12, 22, .62) 60%,
+      rgba(9, 12, 22, .46) 100%) !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-hero h1 {
+    font-size: clamp(48px, 13.3vw, 58px) !important;
+    max-width: 100% !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-stage h3 {
+    font-size: clamp(50px, 14vw, 60px) !important;
+    max-width: 100% !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-method h2,
+  html:root:root:root:root:root:root body#fa.cap-page .kps-final h2 {
+    font-size: clamp(44px, 12vw, 54px) !important;
+    line-height: 1.08 !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-hero .sub,
+  html:root:root:root:root:root:root body#fa.cap-page .kps-stage p,
+  html:root:root:root:root:root:root body#fa.cap-page .kps-method .kps-sub,
+  html:root:root:root:root:root:root body#fa.cap-page .kps-final p {
+    font-size: 24px !important;
+    line-height: 1.48 !important;
+  }
+  html:root:root:root:root:root:root body#fa.cap-page .kps-hero .kps-stats span {
+    font-size: 20px !important;
+  }
+}
